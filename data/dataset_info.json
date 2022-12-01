@@ -1,0 +1,33 @@
+[
+    {
+        "name" : "Electricity Transformer Data - 15 min",
+        "frequency" : "fifteen minutes",
+        "description" : "...",
+        "source" : "https://github.com/zhouhaoyi/ETDataset",
+        "path" : "data/electricity_transformer_15min.csv"
+        },
+
+    {
+        "name" : "Metro Interstate Human Traffic Volume",
+        "frequency" : "hour",
+        "description" : "Hourly Interstate 94 Westbound traffic volume for MN DoT ATR station 301, roughly midway between Minneapolis and St Paul, MN. Hourly weather features and holidays included for impacts on traffic volume.",
+        "source" : "https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume",
+        "path" : "data/Metro_Interstate_Traffic_Volume.csv"
+        },
+
+    {
+        "name" : "Beijing-Guanyuan Air-Quality",
+        "frequency" : "hour",
+        "description" : "This hourly data set considers 6 main air pollutants and 6 relevant meteorological variables at multiple sites in Beijing.",
+        "source" : "https://archive.ics.uci.edu/ml/datasets/Beijing+Multi-Site+Air-Quality+Data",
+        "path" : "data/beijing_air_quality_Data_Guanyuan_20130301-20170228.csv"
+        },
+
+    {
+        "name" : "Solar Generation - EnerjiSA",
+        "frequency" : "hour",
+        "description" : " Solar generation data of unlicenced solar centrals in Ankara",
+        "source" : "https://www.kaggle.com/competitions/enerjisa-enerji-veri-maratonu/data",
+        "path" : "data/enerjisa_solar_generation.csv"
+        }
+]
