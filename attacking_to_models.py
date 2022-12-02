@@ -74,7 +74,7 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
                 y_test_inv = scaler.inverse_transform(y_test).reshape(1,-1)[0]
 
                 adv_samples[row["name"]][model_name]["PGD"]["epsilon = " + str(epsilon) + " | alpha = " + str(alpha)] = {
-                    "data" : X_adv,
+                    "data" : str(X_adv),
                     "metrics" : {
                         "R2" : r2_score(y_test_inv,pred),
                         "MAE" : round(MAE(y_test_inv,pred),2),
