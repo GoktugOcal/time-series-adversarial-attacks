@@ -54,14 +54,18 @@ for index, row in info.iterrows():
         pred = scaler.inverse_transform(pred).reshape(1,-1)[0]
         y_test_inv = scaler.inverse_transform(y_test).reshape(1,-1)[0]
 
-        save_path = "models/" + row["name"] + "--" + model_name + ".h5"
+        save_path = "models/many-to-one/" + row["name"] + "--" + model_name + ".h5"
         model_info[row["name"]][model_name] = {
+            "R2" : r2_score(y_test_inv,pred),
+            "MAE" : round(MAE(y_test_inv,pred),2),
             "RMSE" : round(RMSE(y_test_inv,pred),2),
             "MSE" : round(MSE(y_test_inv,pred),2),
             "MAPE" : round(MAPE(y_test_inv,pred),2),
+            "SMAPE" : round(SMAPE(y_test_inv,pred),2),
+            "MDAPE" : round(MDAPE(y_test_inv,pred),2),
             "path": save_path
         }
 
         model.save(save_path)
-with open("models/model_info.json", "w") as outfile:
+with open("models/many-to-one/model_info.json", "w") as outfile:
     json.dump(model_info, outfile, indent = 4)

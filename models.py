@@ -7,6 +7,8 @@
 
 from tensorflow.keras.layers import Dense,Dropout,LSTM, Input, Flatten, Conv2D, MaxPool2D, Conv1D, MaxPooling1D, Bidirectional
 from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import RNN
+from tensorflow.keras.experimental import PeepholeLSTMCell
 # from keras.layers import CuDNNLSTM as LSTM
 
 def single_layer_lstm(input_shape: tuple, output_len : int):
@@ -52,6 +54,20 @@ def bidirectional_lstm(input_shape: tuple, output_len : int):
 
     return model
 
+def peephole_lstm(input_shape: tuple, output_len : int):
+
+    model = Sequential()
+    model.add(RNN([PeepholeLSTMCell(8)], input_shape=input_shape))
+    model.add(Dropout(0.15))
+    model.add(Dense(output_len))
+    model.summary()
+
+    model.compile(optimizer="adam",loss="MSE")
+
+    # model.name="Bidirectional LSTM"
+
+    return model
+
 def cnn1d(input_shape: tuple, output_len : int):
 
     model = Sequential()
@@ -70,5 +86,6 @@ MODELS = {
     "Single Layer LSTM" : single_layer_lstm,
     "Double Layer LSTM" : double_layer_lstm,
     "Bidirectional LSTM" : bidirectional_lstm,
+    # "Peephole LSTM" : peephole_lstm,
     "CNN1D" : cnn1d
 }
