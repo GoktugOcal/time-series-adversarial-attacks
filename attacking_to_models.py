@@ -51,9 +51,9 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
             y_test_inv = scaler.inverse_transform(y_test).reshape(1,-1)[0]
 
             adv_samples[row["name"]][model_name]["FGSM"]["epsilon = " + str(epsilon)] = {
-                "data" : X_adv,
+                # "data" : X_adv.numpy().reshape(X_adv.shape[0],X_adv.shape[1]),
                 "metrics" : {
-                    "R2" : r2_score(y_test_inv,pred),
+                    "R2" : round(r2_score(y_test_inv,pred),3),
                     "MAE" : round(MAE(y_test_inv,pred),2),
                     "RMSE" : round(RMSE(y_test_inv,pred),2),
                     "MSE" : round(MSE(y_test_inv,pred),2),
@@ -63,7 +63,7 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
                 }
             }
 
-        # FGSM attack
+        # PGD attack
         for alpha in tqdm([0.001, 0.01, 0.02, 0.05, 0.1, 1], desc="PGD", position=2):
             for epsilon in [0.01, 0.02, 0.05, 0.1]:
                 iterations = 7
@@ -74,9 +74,9 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
                 y_test_inv = scaler.inverse_transform(y_test).reshape(1,-1)[0]
 
                 adv_samples[row["name"]][model_name]["PGD"]["epsilon = " + str(epsilon) + " | alpha = " + str(alpha)] = {
-                    "data" : str(X_adv),
+                    # "data" : str(X_adv),
                     "metrics" : {
-                        "R2" : r2_score(y_test_inv,pred),
+                        "R2" : round(r2_score(y_test_inv,pred),3),
                         "MAE" : round(MAE(y_test_inv,pred),2),
                         "RMSE" : round(RMSE(y_test_inv,pred),2),
                         "MSE" : round(MSE(y_test_inv,pred),2),
@@ -85,6 +85,9 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
                         "MDAPE" : round(MDAPE(y_test_inv,pred),2)
                     }
                 }
+    #     break
+    # break
 
+# np.save('adv_examples/many-to-one/adv_gen_l_inf.npy',adv_samples)
 with open("adv_examples/many-to-one/adv_gen_l_inf.json", "w") as outfile:
-    json.dump(adv_samples, outfile, indent = 4)
+    json.dump(adv_samples, outfile)
