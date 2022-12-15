@@ -97,7 +97,7 @@ def fgsm_attack(
 
     inp = tf.convert_to_tensor(X_test, dtype = tf.float32)
     imgv = tf.Variable(inp)
-    with tf.GradientTape(persistent=True) as tape:
+    with tf.GradientTape() as tape:
         tape.watch(imgv)
         predictions = model(imgv)
         loss = tf.keras.losses.MeanSquaredError()(y_test, predictions)
@@ -132,7 +132,7 @@ def pgd_attack(
 
     for iters in range(iterations):
         imgv = tf.Variable(gen_img)
-        with tf.GradientTape(persistent=True) as tape:
+        with tf.GradientTape() as tape:
             tape.watch(imgv)
             predictions = model(imgv)
             loss = tf.keras.losses.MeanSquaredError()(y_test, predictions)

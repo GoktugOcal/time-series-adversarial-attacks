@@ -61,6 +61,7 @@ class DataLoader:
         
         elif self.last_loaded_info["name"] == "Metro Interstate Human Traffic Volume":
             df = self.last_loaded
+            df["traffic_volume"] = df["traffic_volume"].astype(float)
             df = df[["date_time","traffic_volume"]].set_index("date_time")
             df.columns = ["value"]
 

@@ -1,0 +1,170 @@
+{
+    "Electricity Transformer Data - 15 min": {
+        "Single Layer LSTM": {
+            "R2": 0.9281727712540238,
+            "MAE": 0.75,
+            "RMSE": 0.98,
+            "MSE": 0.96,
+            "MAPE": 14.92,
+            "SMAPE": 20.24,
+            "MDAPE": 9.67,
+            "path": "models/many-to-many/Electricity Transformer Data - 15 min--Single Layer LSTM.h5"
+        },
+        "Double Layer LSTM": {
+            "R2": 0.9512088601565891,
+            "MAE": 0.56,
+            "RMSE": 0.81,
+            "MSE": 0.66,
+            "MAPE": 10.17,
+            "SMAPE": 16.31,
+            "MDAPE": 6.08,
+            "path": "models/many-to-many/Electricity Transformer Data - 15 min--Double Layer LSTM.h5"
+        },
+        "Bidirectional LSTM": {
+            "R2": 0.9521421827113011,
+            "MAE": 0.54,
+            "RMSE": 0.8,
+            "MSE": 0.64,
+            "MAPE": 10.32,
+            "SMAPE": 15.97,
+            "MDAPE": 5.95,
+            "path": "models/many-to-many/Electricity Transformer Data - 15 min--Bidirectional LSTM.h5"
+        },
+        "CNN1D": {
+            "R2": 0.9373141580197606,
+            "MAE": 0.64,
+            "RMSE": 0.92,
+            "MSE": 0.84,
+            "MAPE": 12.43,
+            "SMAPE": 19.32,
+            "MDAPE": 6.66,
+            "path": "models/many-to-many/Electricity Transformer Data - 15 min--CNN1D.h5"
+        }
+    },
+    "Metro Interstate Human Traffic Volume": {
+        "Single Layer LSTM": {
+            "R2": 0.6332747440541783,
+            "MAE": 883.58,
+            "RMSE": 1195.59,
+            "MSE": 1429430.19,
+            "MAPE": 68.7,
+            "SMAPE": 38.54,
+            "MDAPE": 22.0,
+            "path": "models/many-to-many/Metro Interstate Human Traffic Volume--Single Layer LSTM.h5"
+        },
+        "Double Layer LSTM": {
+            "R2": 0.6951910443168487,
+            "MAE": 747.33,
+            "RMSE": 1090.0,
+            "MSE": 1188091.4,
+            "MAPE": 56.82,
+            "SMAPE": 33.04,
+            "MDAPE": 17.03,
+            "path": "models/many-to-many/Metro Interstate Human Traffic Volume--Double Layer LSTM.h5"
+        },
+        "Bidirectional LSTM": {
+            "R2": 0.6501920170360538,
+            "MAE": 848.21,
+            "RMSE": 1167.69,
+            "MSE": 1363489.65,
+            "MAPE": 70.76,
+            "SMAPE": 37.76,
+            "MDAPE": 19.94,
+            "path": "models/many-to-many/Metro Interstate Human Traffic Volume--Bidirectional LSTM.h5"
+        },
+        "CNN1D": {
+            "R2": 0.5546058919285607,
+            "MAE": 1007.95,
+            "RMSE": 1317.6,
+            "MSE": 1736067.46,
+            "MAPE": 77.23,
+            "SMAPE": 42.66,
+            "MDAPE": 25.94,
+            "path": "models/many-to-many/Metro Interstate Human Traffic Volume--CNN1D.h5"
+        }
+    },
+    "Beijing-Guanyuan Air-Quality": {
+        "Single Layer LSTM": {
+            "R2": 0.6289898752719536,
+            "MAE": 33.09,
+            "RMSE": 54.27,
+            "MSE": 2945.38,
+            "MAPE": 122.09,
+            "SMAPE": 49.89,
+            "MDAPE": 35.29,
+            "path": "models/many-to-many/Beijing-Guanyuan Air-Quality--Single Layer LSTM.h5"
+        },
+        "Double Layer LSTM": {
+            "R2": 0.6249455577163323,
+            "MAE": 33.22,
+            "RMSE": 54.57,
+            "MSE": 2977.48,
+            "MAPE": 118.24,
+            "SMAPE": 50.25,
+            "MDAPE": 35.54,
+            "path": "models/many-to-many/Beijing-Guanyuan Air-Quality--Double Layer LSTM.h5"
+        },
+        "Bidirectional LSTM": {
+            "R2": 0.6253058060101957,
+            "MAE": 33.03,
+            "RMSE": 54.54,
+            "MSE": 2974.62,
+            "MAPE": 121.03,
+            "SMAPE": 49.79,
+            "MDAPE": 35.47,
+            "path": "models/many-to-many/Beijing-Guanyuan Air-Quality--Bidirectional LSTM.h5"
+        },
+        "CNN1D": {
+            "R2": 0.5139700834840568,
+            "MAE": 39.54,
+            "RMSE": 62.12,
+            "MSE": 3858.5,
+            "MAPE": 152.3,
+            "SMAPE": 57.65,
+            "MDAPE": 44.14,
+            "path": "models/many-to-many/Beijing-Guanyuan Air-Quality--CNN1D.h5"
+        }
+    },
+    "Solar Generation - EnerjiSA": {
+        "Single Layer LSTM": {
+            "R2": 0.9026305541571588,
+            "MAE": 26.28,
+            "RMSE": 43.05,
+            "MSE": 1853.64,
+            "MAPE": 3225614.96,
+            "SMAPE": 112.45,
+            "MDAPE": 262.44,
+            "path": "models/many-to-many/Solar Generation - EnerjiSA--Single Layer LSTM.h5"
+        },
+        "Double Layer LSTM": {
+            "R2": 0.9096648069606729,
+            "MAE": 23.99,
+            "RMSE": 41.47,
+            "MSE": 1719.73,
+            "MAPE": 1723490.87,
+            "SMAPE": 110.67,
+            "MDAPE": 179.87,
+            "path": "models/many-to-many/Solar Generation - EnerjiSA--Double Layer LSTM.h5"
+        },
+        "Bidirectional LSTM": {
+            "R2": 0.9048221290212453,
+            "MAE": 26.77,
+            "RMSE": 42.57,
+            "MSE": 1811.92,
+            "MAPE": 4479518.76,
+            "SMAPE": 112.61,
+            "MDAPE": 283.94,
+            "path": "models/many-to-many/Solar Generation - EnerjiSA--Bidirectional LSTM.h5"
+        },
+        "CNN1D": {
+            "R2": 0.917026502816719,
+            "MAE": 22.27,
+            "RMSE": 39.74,
+            "MSE": 1579.58,
+            "MAPE": 1830685.28,
+            "SMAPE": 109.29,
+            "MDAPE": 156.74,
+            "path": "models/many-to-many/Solar Generation - EnerjiSA--CNN1D.h5"
+        }
+    }
+}
