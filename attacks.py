@@ -86,10 +86,18 @@ def optimize_linear(grad, eps, norm=np.inf):
     return scaled_perturbation
 
 
-def fgsm_attack(X_test, y_test, model, epsilon, norm):
+def fgsm_attack(
+    X_test, 
+    y_test, 
+    model, 
+    epsilon, 
+    norm,
+    clip_min = None,
+    clip_max = None):
+
     inp = tf.convert_to_tensor(X_test, dtype = tf.float32)
     imgv = tf.Variable(inp)
-    with tf.GradientTape() as tape:
+    with tf.GradientTape(persistent=True) as tape:
         tape.watch(imgv)
         predictions = model(imgv)
         loss = tf.keras.losses.MeanSquaredError()(y_test, predictions)
@@ -97,12 +105,24 @@ def fgsm_attack(X_test, y_test, model, epsilon, norm):
 
     perturbation = optimize_linear(grads, epsilon, norm)
     inp = inp + perturbation
+
+    if clip_min is not None or clip_max is not None:
+        inp = tf.clip_by_value(inp, clip_min, clip_max)
     # signed_grads = tf.sign(grads)
     # inp = inp + (epsilon*signed_grads)
 
     return inp
 
-def pgd_attack(X_test, y_test, model, iterations, alpha, epsilon, norm):
+def pgd_attack(
+    X_test,
+    y_test,
+    model,
+    iterations,
+    alpha,
+    epsilon,
+    norm,
+    clip_min = None,
+    clip_max = None):
     
     gen_img = tf.convert_to_tensor(X_test, dtype=tf.float32)
     gen_img = tf.clip_by_value(gen_img, X_test-epsilon, X_test+epsilon)
@@ -112,7 +132,7 @@ def pgd_attack(X_test, y_test, model, iterations, alpha, epsilon, norm):
 
     for iters in range(iterations):
         imgv = tf.Variable(gen_img)
-        with tf.GradientTape() as tape:
+        with tf.GradientTape(persistent=True) as tape:
             tape.watch(imgv)
             predictions = model(imgv)
             loss = tf.keras.losses.MeanSquaredError()(y_test, predictions)
@@ -127,6 +147,9 @@ def pgd_attack(X_test, y_test, model, iterations, alpha, epsilon, norm):
         eta = clip_eta(eta, norm, epsilon)
         gen_img = tf.convert_to_tensor(X_test, dtype=tf.float32) + eta
         # gen_img = tf.clip_by_value(gen_img, X_test-epsilon, X_test+epsilon)
+
+        if clip_min is not None or clip_max is not None:
+            gen_img = tf.clip_by_value(gen_img, clip_min, clip_max)
 
         
     return gen_img

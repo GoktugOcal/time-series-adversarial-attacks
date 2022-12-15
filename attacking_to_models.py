@@ -43,14 +43,14 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
         model = load_model(model_path)
         
         # FGSM attack
-        for epsilon in tqdm([0.001, 0.01, 0.02, 0.05, 0.1, 1], desc="FGSM", position=2):
-            X_adv = fgsm_attack(X_test, y_test, model, epsilon, np.inf)
+        for epsilon in tqdm([0.01, 0.025, 0.05, 0.1], desc="FGSM", position=2):
+            X_adv = fgsm_attack(X_test, y_test, model, epsilon, np.inf, clip_min=0, clip_max=100000)
 
             pred = model.predict(X_adv)
             pred = scaler.inverse_transform(pred).reshape(1,-1)[0]
             y_test_inv = scaler.inverse_transform(y_test).reshape(1,-1)[0]
 
-            adv_samples[row["name"]][model_name]["FGSM"]["epsilon = " + str(epsilon)] = {
+            adv_samples[row["name"]][model_name]["FGSM"]["epsilon=" + str(epsilon)] = {
                 # "data" : X_adv.numpy().reshape(X_adv.shape[0],X_adv.shape[1]),
                 "metrics" : {
                     "R2" : round(r2_score(y_test_inv,pred),3),
@@ -64,16 +64,16 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
             }
 
         # PGD attack
-        for alpha in tqdm([0.001, 0.01, 0.02, 0.05, 0.1, 1], desc="PGD", position=2):
-            for epsilon in [0.01, 0.02, 0.05, 0.1]:
+        for alpha in tqdm([0.01, 0.025], desc="PGD", position=2):
+            for epsilon in [0.01, 0.025]:
                 iterations = 7
-                X_adv = pgd_attack(X_test, y_test, model, iterations, alpha, epsilon, np.inf)
+                X_adv = pgd_attack(X_test, y_test, model, iterations, alpha, epsilon, np.inf, clip_min=0, clip_max=100000)
 
                 pred = model.predict(X_adv)
                 pred = scaler.inverse_transform(pred).reshape(1,-1)[0]
                 y_test_inv = scaler.inverse_transform(y_test).reshape(1,-1)[0]
 
-                adv_samples[row["name"]][model_name]["PGD"]["epsilon = " + str(epsilon) + " | alpha = " + str(alpha)] = {
+                adv_samples[row["name"]][model_name]["PGD"]["alpha=" + str(alpha) + " | epsilon=" + str(epsilon)] = {
                     # "data" : str(X_adv),
                     "metrics" : {
                         "R2" : round(r2_score(y_test_inv,pred),3),
@@ -89,5 +89,5 @@ for index, row in tqdm(info.iterrows(), desc="dataset", position=0) :
     # break
 
 # np.save('adv_examples/many-to-one/adv_gen_l_inf.npy',adv_samples)
-with open("adv_examples/many-to-one/adv_gen_l_inf.json", "w") as outfile:
+with open("adv_examples/many-to-one/adv_gen_l_inf_2.json", "w") as outfile:
     json.dump(adv_samples, outfile)
