@@ -4,11 +4,6 @@ from misc.evaluation_metrics import *
 
 from sklearn.utils import shuffle
 
-# import tensorflow as tf
-# gpus = tf.config.list_physical_devices('GPU')
-# if gpus:
-#     for gpu in gpus:
-#         tf.config.experimental.set_memory_growth(gpu, True)
 from tensorflow.keras.models import load_model
 from tensorflow.keras.callbacks import EarlyStopping
 early_stopping = EarlyStopping(patience = 3)
