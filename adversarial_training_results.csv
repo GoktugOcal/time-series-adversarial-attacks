@@ -1,0 +1,66 @@
+,,,Original,FGSM,FGSM,FGSM,PGD,PGD,PGD
+,,,,Attack,Training,Test,Attack,Training,Test
+Electricity Transformer Data - 15 min,Single Layer LSTM,R2,0.99,0.77,0.99,0.98,0.86,0.99,0.98
+Electricity Transformer Data - 15 min,Single Layer LSTM,RMSE,0.35,1.72,0.53,0.49,1.35,0.55,0.43
+Electricity Transformer Data - 15 min,Single Layer LSTM,MAE,0.25,1.7,0.38,0.42,1.32,0.39,0.34
+Electricity Transformer Data - 15 min,Single Layer LSTM,MAPE,4.94,32.6,3.22,8.47,25.08,3.34,6.96
+Electricity Transformer Data - 15 min,Double Layer LSTM,R2,0.99,0.81,0.99,0.99,0.85,0.99,0.98
+Electricity Transformer Data - 15 min,Double Layer LSTM,RMSE,0.32,1.6,0.57,0.34,1.42,0.64,0.48
+Electricity Transformer Data - 15 min,Double Layer LSTM,MAE,0.22,1.58,0.4,0.24,1.38,0.47,0.38
+Electricity Transformer Data - 15 min,Double Layer LSTM,MAPE,4.34,30.11,3.28,4.6,26.72,4.14,7.47
+Electricity Transformer Data - 15 min,Bidirectional LSTM,R2,0.99,0.81,0.99,0.99,0.86,0.99,0.98
+Electricity Transformer Data - 15 min,Bidirectional LSTM,RMSE,0.32,1.58,0.49,0.35,1.37,0.61,0.5
+Electricity Transformer Data - 15 min,Bidirectional LSTM,MAE,0.23,1.56,0.33,0.27,1.32,0.44,0.4
+Electricity Transformer Data - 15 min,Bidirectional LSTM,MAPE,4.32,29.47,2.8,5.52,24.69,3.73,8.08
+Electricity Transformer Data - 15 min,CNN1D,R2,0.98,0.68,0.98,0.97,0.56,0.99,0.98
+Electricity Transformer Data - 15 min,CNN1D,RMSE,0.53,2.05,0.87,0.56,2.41,0.83,0.49
+Electricity Transformer Data - 15 min,CNN1D,MAE,0.39,1.94,0.61,0.41,2.34,0.61,0.37
+Electricity Transformer Data - 15 min,CNN1D,MAPE,7.8,36.56,4.79,7.58,44.37,4.57,7.27
+Metro Interstate Human Traffic Volume,Single Layer LSTM,R2,0.95,0.83,0.90,0.94,0.83,0.90,0.93
+Metro Interstate Human Traffic Volume,Single Layer LSTM,RMSE,449.74,812.3,598.86,445.5,801.47,614.81,510.92
+Metro Interstate Human Traffic Volume,Single Layer LSTM,MAE,321.11,710.75,389.55,314.98,684.65,416.73,373.3
+Metro Interstate Human Traffic Volume,Single Layer LSTM,MAPE,17.21,48.67,37.99,17.4,44.42,58.01,30.25
+Metro Interstate Human Traffic Volume,Double Layer LSTM,R2,0.95,0.76,0.92,0.95,0.76,0.92,0.95
+Metro Interstate Human Traffic Volume,Double Layer LSTM,RMSE,433.64,968.36,545.45,409.75,966.2,545.06,422.79
+Metro Interstate Human Traffic Volume,Double Layer LSTM,MAE,306.83,825.71,346.07,281.6,805.16,351.6,304.21
+Metro Interstate Human Traffic Volume,Double Layer LSTM,MAPE,19.19,67.41,37.27,14.23,62.76,45.0,17.89
+Metro Interstate Human Traffic Volume,Bidirectional LSTM,R2,0.95,0.82,0.91,0.95,0.83,0.91,0.95
+Metro Interstate Human Traffic Volume,Bidirectional LSTM,RMSE,429.81,823.86,578.74,433.3,813.06,574.7,436.6
+Metro Interstate Human Traffic Volume,Bidirectional LSTM,MAE,305.38,723.97,380.06,313.59,697.62,370.6,311.65
+Metro Interstate Human Traffic Volume,Bidirectional LSTM,MAPE,15.65,49.49,49.51,19.16,45.47,47.22,18.05
+Metro Interstate Human Traffic Volume,CNN1D,R2,0.95,0.80,0.92,0.94,0.79,0.92,0.94
+Metro Interstate Human Traffic Volume,CNN1D,RMSE,448.97,874.36,547.13,448.28,904.74,542.56,445.46
+Metro Interstate Human Traffic Volume,CNN1D,MAE,325.54,771.21,361.46,324.38,801.82,356.77,317.47
+Metro Interstate Human Traffic Volume,CNN1D,MAPE,19.32,48.05,39.45,17.93,49.4,38.66,16.8
+Beijing-Guanyuan Air-Quality,Single Layer LSTM,R2,0.95,0.83,0.92,0.93,0.85,0.92,0.93
+Beijing-Guanyuan Air-Quality,Single Layer LSTM,RMSE,19.57,36.36,21.1,23.44,34.26,20.94,23.02
+Beijing-Guanyuan Air-Quality,Single Layer LSTM,MAE,10.58,31.01,13.23,14.07,27.41,13.02,13.59
+Beijing-Guanyuan Air-Quality,Single Layer LSTM,MAPE,26.98,92.0,34.89,47.2,68.11,31.61,40.7
+Beijing-Guanyuan Air-Quality,Double Layer LSTM,R2,0.95,0.82,0.93,0.94,0.85,0.93,0.93
+Beijing-Guanyuan Air-Quality,Double Layer LSTM,RMSE,19.67,37.0,19.65,20.34,33.51,20.2,22.48
+Beijing-Guanyuan Air-Quality,Double Layer LSTM,MAE,10.77,32.09,12.7,12.47,25.83,12.6,13.26
+Beijing-Guanyuan Air-Quality,Double Layer LSTM,MAPE,33.26,110.98,41.01,54.18,75.39,38.99,51.44
+Beijing-Guanyuan Air-Quality,Bidirectional LSTM,R2,0.95,0.83,0.93,0.94,0.86,0.93,0.93
+Beijing-Guanyuan Air-Quality,Bidirectional LSTM,RMSE,19.69,36.38,20.03,21.24,32.61,20.34,22.04
+Beijing-Guanyuan Air-Quality,Bidirectional LSTM,MAE,10.79,31.33,11.81,11.56,24.48,12.28,12.69
+Beijing-Guanyuan Air-Quality,Bidirectional LSTM,MAPE,34.46,108.49,26.97,32.77,72.71,28.81,37.26
+Beijing-Guanyuan Air-Quality,CNN1D,R2,0.94,0.72,0.92,0.92,0.75,0.93,0.94
+Beijing-Guanyuan Air-Quality,CNN1D,RMSE,21.56,46.78,20.89,23.78,43.7,19.25,21.37
+Beijing-Guanyuan Air-Quality,CNN1D,MAE,12.59,42.28,13.09,13.98,36.91,11.86,12.41
+Beijing-Guanyuan Air-Quality,CNN1D,MAPE,46.36,152.31,37.36,47.17,139.22,33.72,41.1
+Solar Generation - EnerjiSA,Single Layer LSTM,R2,0.99,0.90,0.99,0.98,0.90,0.98,0.98
+Solar Generation - EnerjiSA,Single Layer LSTM,RMSE,12.86,43.31,11.65,13.78,42.69,12.35,15.46
+Solar Generation - EnerjiSA,Single Layer LSTM,MAE,8.16,33.14,7.36,8.52,32.54,7.66,9.88
+Solar Generation - EnerjiSA,Single Layer LSTM,MAPE,895897.9,4382258.21,7408644.05,959192.78,4793282.59,6766378.34,1530813.76
+Solar Generation - EnerjiSA,Double Layer LSTM,R2,0.99,0.93,0.99,0.99,0.93,0.99,0.99
+Solar Generation - EnerjiSA,Double Layer LSTM,RMSE,10.7,35.21,9.31,10.87,34.5,9.54,11.29
+Solar Generation - EnerjiSA,Double Layer LSTM,MAE,6.12,27.58,5.42,6.27,28.08,5.61,6.66
+Solar Generation - EnerjiSA,Double Layer LSTM,MAPE,714818.63,4137324.57,4734202.81,536533.84,6136413.29,4616823.86,623742.37
+Solar Generation - EnerjiSA,Bidirectional LSTM,R2,0.99,0.88,0.99,0.99,0.89,0.99,0.98
+Solar Generation - EnerjiSA,Bidirectional LSTM,RMSE,13.06,47.15,10.27,12.43,44.36,11.68,14.8
+Solar Generation - EnerjiSA,Bidirectional LSTM,MAE,8.94,42.34,6.62,7.59,39.5,7.48,9.26
+Solar Generation - EnerjiSA,Bidirectional LSTM,MAPE,1550265.83,13121065.89,8379293.62,1992684.1,11956808.31,8446088.25,1584701.38
+Solar Generation - EnerjiSA,CNN1D,R2,0.99,0.92,0.98,0.98,0.92,0.99,0.99
+Solar Generation - EnerjiSA,CNN1D,RMSE,12.23,37.83,12.28,14.97,37.46,10.91,13.14
+Solar Generation - EnerjiSA,CNN1D,MAE,7.11,28.7,7.91,9.33,28.05,6.71,7.93
+Solar Generation - EnerjiSA,CNN1D,MAPE,575486.54,3423599.95,7936779.84,1228233.88,3669001.06,6307630.28,1007483.92
