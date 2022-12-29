@@ -50,6 +50,10 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 # Some Experiment Results
 
 ## Adversarial Training
+
+All the results are the Mean Absolute Errors (MAE) values. Original column refers to forecasting error for the model trained with original data. Attack columns refers to forecasting error for adversarial samples generated with corresponding attacks type and given to the model trained with original data. Training and Test columns are the forecasting errors for the models trained with both original and adversarial samples and both training and test set includes both of the samples.
+
+
 |                         |                    | Original |        |   FGSM   |        |        |   PGD    |        |
 |:-----------------------:|:------------------:|:--------:|:------:|:--------:|:------:|:------:|:--------:|:------:|
 |                         |                    |          | Attack | Training |  Test  | Attack | Training |  Test  |
