@@ -15,12 +15,12 @@ Since the decision-making process in some businesses highly relies on Deep Neura
 ```shell
 $ pip install -r requirements.txt
 ```
-
+<!-- 
 2- Download datasets.
 ```shell
 $ pip download_data.py
 ```
-
+-->
 ## Usage
 
 ### Model Training
@@ -28,7 +28,7 @@ $ pip download_data.py
 Trains the selected models for selected datasets and saves models and error metrics to a specific directory.
 
 ```shell
-$ python model_training.py [--datasets <"dataset_name_1, dataset_name_2, ...">] [--models <"model_name_1, model_name_2, ...">]
+$ python model_training.py [--setting <"mtm | mto">] [--datasets <"dataset_name_1, dataset_name_2, ...">] [--models <"model_name_1, model_name_2, ...">]
 ```
 
 ### Adversarial Attacks
@@ -50,10 +50,9 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 # Some Experiment Results
 
 ## Adversarial Training
-|                         |                    | Original |  FGSM  |          |        |   PGD  |          |        |
+|                         |                    | Original |        |   FGSM   |        |        |   PGD    |        |
 |:-----------------------:|:------------------:|:--------:|:------:|:--------:|:------:|:------:|:--------:|:------:|
 |                         |                    |          | Attack | Training |  Test  | Attack | Training |  Test  |
-|:-----------------------:|:------------------:|:--------:|:------:|:--------:|:------:|:------:|:--------:|:------:|
 | Electricity Transformer |  Single Layer LSTM |   0,25   |   1,7  |   0,38   |  0,42  |  1,32  |   0,39   |  0,34  |
 |                         |  Double Layer LSTM |   0,22   |  1,58  |    0,4   |  0,24  |  1,38  |   0,47   |  0,38  |
 |                         | Bidirectional LSTM |   0,23   |  1,56  |   0,33   |  0,27  |  1,32  |   0,44   |   0,4  |
@@ -70,4 +69,3 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 |                         |  Double Layer LSTM |   6,12   |  27,58 |   5,42   |  6,27  |  28,08 |   5,61   |  6,66  |
 |                         | Bidirectional LSTM |   8,94   |  42,34 |   6,62   |  7,59  |  39,5  |   7,48   |  9,26  |
 |                         |        CNN1D       |   7,11   |  28,7  |   7,91   |  9,33  |  28,05 |   6,71   |  7,93  |
-|:-----------------------:|:------------------:|:--------:|:------:|:--------:|:------:|:------:|:--------:|:------:|

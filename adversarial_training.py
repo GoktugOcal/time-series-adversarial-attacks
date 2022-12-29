@@ -1,5 +1,5 @@
-from data_loader import DataLoader
-from models import MODELS
+from misc.data_loader import DataLoader
+from misc.models import MODELS
 from misc.evaluation_metrics import *
 
 from sklearn.utils import shuffle
@@ -8,18 +8,52 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.callbacks import EarlyStopping
 early_stopping = EarlyStopping(patience = 3)
 
-from attacks import fgsm_attack, pgd_attack
+from misc.attacks import fgsm_attack, pgd_attack
 
 from tqdm import tqdm
 import json
 import warnings
 warnings.filterwarnings("ignore")
 
+import argparse
+
+parser = argparse.ArgumentParser(
+    prog = "Vanilla Model Training",
+    description = "Trains the models defined in 'models.py' file and saves them to 'models/'"
+)
+
+parser.add_argument("--datasets")
+parser.add_argument("--models")
+parser.add_argument("--attack")
+args = parser.parse_args()
+datasets = args.datasets
+models = args.models
+
+
 dl = DataLoader()
 info = dl.get_info()
 df = dl.load(dataset_index = 0)
 
-print(info)
+if datasets:
+    datasets = [item.strip() for item in datasets.split(",")]
+    for dataset in datasets:
+        if not dataset in info.name.tolist():
+            raise ValueError("Dataset '" + dataset + "' does not exist in defined datasets.")
+
+    info = info[info.name.isin(datasets)]
+
+if models:
+    models = [item.strip() for item in models.split(",")]
+    for model in models:
+        if not model in MODELS.keys():
+            raise ValueError("Model '" + model + "' does not exist in defined models.")
+    MODELS = dict(filter(lambda x: x[0] in models, MODELS.items()))
+
+if attacks:
+    attacks = [item.strip().lower() for item in attacks.split(",")]
+else:
+    attacks = ["fgsm","pgd"]
+
 
 adv_model_info = {
 
@@ -52,10 +86,9 @@ for index, row in info.iterrows():
         model_path = model_info[row["name"]][model_name]["path"]
         org_model = load_model(model_path)
 
-        # for attack in ["FGSM","PGD"]:
-        for attack in ["PGD"]:
+        for attack in attacks:
 
-            if attack == "FGSM":
+            if attack == "fgsm":
                 # Attack to training set
                 epsilon = 0.025
                 X_adv = fgsm_attack(X_train, y_train, org_model, epsilon, np.inf, clip_min=0, clip_max=100000)
@@ -119,7 +152,7 @@ for index, row in info.iterrows():
                 new_model.save(save_path)
 
 
-            elif attack == "PGD":
+            elif attack == "pgd":
                 # Attack to training set
                 epsilon = 0.025
                 alpha = 0.025
@@ -187,3 +220,6 @@ for index, row in info.iterrows():
 
 with open("adv_examples/many-to-one/adv_training.json", "w") as outfile:
     json.dump(adv_samples, outfile)
+
+print("Adversarially trained models have been saved to 'models/many-to-one/adv_trained_models/'")
+print("Adversarially trained model performances have been saved to 'adv_examples/many-to-one/adv_training.json'")
