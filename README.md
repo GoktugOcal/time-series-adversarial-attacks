@@ -49,6 +49,86 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 
 # Some Experiment Results
 
+## Adversarial Samples
+
+### PGD Attack
+
+> (Many-to-one) Original sample, perturbation, and Adversarial sample generated with **PGD attack** and **LSTM model** for Solar Generation dataset with **input size of 23**:
+
+<div style="background-color:white; color:black">
+
+Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
+:-------------------------------------:|:-------------------------------------------:|:--:|
+![](paper/images/adv/original-24.png)  |  ![](paper/images/adv/perturbation-24.png)  |   ![](paper/images/adv/adversarial-sample-24.png)  |
+
+</div>
+
+
+> (Many-to-one) Original sample, perturbation, and Adversarial sample generated with **PGD attack** and **LSTM model** for Electricity Transformer dataset with **input size of 92**:
+
+<div style="background-color:white; color:black">
+
+Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
+:-------------------------------------:|:-------------------------------------------:|:--:|
+![](paper/images/adv/original-92.png)  |  ![](paper/images/adv/perturbation-92.png)  |   ![](paper/images/adv/adversarial-sample-92.png)  |
+
+</div>
+
+> (Many-to-one) Original sample, perturbation, and Adversarial sample generated with **PGD attack** and **CNN model** for Electricity Transformer dataset with **input size of 92**:
+
+<div style="background-color:white; color:black">
+
+Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
+:-------------------------------------:|:-------------------------------------------:|:--:|
+![](paper/images/adv/original-24-cnn.png)  |  ![](paper/images/adv/perturbation-24-cnn.png)  |   ![](paper/images/adv/adversarial-sample-24-cnn.png)  |
+
+</div>
+
+> (Many-to-many) Original sample, perturbation, and Adversarial sample generated with **PGD attack** and **LSTM model** for Electricity Transformer dataset with **input size of 168**:
+
+<div style="background-color:white; color:black">
+
+Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
+:-------------------------------------:|:-------------------------------------------:|:--:|
+![](paper/images/adv/mtm_original_24.png)  |  ![](paper/images/adv/mtm_perturbation_24.png)  |   ![](paper/images/adv/mtm_adversarial_sample_24.png)  |
+
+</div>
+
+### FGSM vs PGD Attack
+
+> (Many-to-one) Comparison of Adversarial Samples generated with FGSM and PGD attacks and LSTM model for Solar Generation dataset with input size of 23
+
+<div style="background-color:white; color:black; width:75%">
+
+![](paper/images/adv/fgsm-vs-pgd-24.png)
+
+</div>
+
+> (Many-to-one) Comparison of Adversarial Samples generated with FGSM and PGD attacks and LSTM model for Electricity Transformer dataset with input size of 92
+
+<div style="background-color:white; color:black; width:75%">
+
+![](paper/images/adv/fgsm-vs-pgd-92.png)
+
+</div>
+
+> (Many-to-one) Comparison of Adversarial Samples generated with FGSM and PGD attacks and CNN model for Electricity Transformer dataset with input size of 92:
+
+<div style="background-color:white; color:black; width:75%">
+
+![](paper/images/adv/fgsm-vs-pgd-92-cnn.png)
+
+</div>
+
+> (Many-to-many) Comparison of Adversarial Samples generated with FGSM and PGD attacks and LSTM model for Electricity Transformer dataset with input size of 168:
+
+<div style="background-color:white; color:black; width:75%">
+
+![](paper/images/adv/mtm_fgsm_vs_pgd_168.png)
+
+</div>
+
+
 ## Adversarial Training
 
 All the results are the Mean Absolute Errors (MAE) values. Original column refers to forecasting error for the model trained with original data. Attack columns refers to forecasting error for adversarial samples generated with corresponding attacks type and given to the model trained with original data. Training and Test columns are the forecasting errors for the models trained with both original and adversarial samples and both training and test set includes both of the samples.
