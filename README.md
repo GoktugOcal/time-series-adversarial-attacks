@@ -53,8 +53,8 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 
 | Model Name           | Structure                                                                                                                                   |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| Single Layer LSTM    | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/single-layer-lstm.jpg?raw=true" width=33%>)  |
-| Double Layer LSTM    | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/dounle-layer-lstm.jpg?raw=true" width=33%>   |
+| Single Layer LSTM    | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/single-layer-lstm.jpg?raw=true" width=33%>   |
+| Double Layer LSTM    | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/double-layer-lstm.jpg?raw=true" width=33%>   |
 | Bidirectional LSTM   | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/bdlstm.jpg?raw=true" width=33%>              |
 | CNN1D                | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/1dcnn.jpg?raw=true" width=33%>               |
 
@@ -70,7 +70,7 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 
 Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
 :-------------------------------------:|:-------------------------------------------:|:--:|
-![](paper/images/adv/original-24.png)  |  ![](paper/images/adv/perturbation-24.png)  |   ![](paper/images/adv/adversarial-sample-24.png)  |
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/original-24.png?raw=true)  |  ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/perturbation-24.png?raw=true)  |   ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/adversarial-sample-24.png?raw=true)  |
 
 </div>
 
@@ -81,7 +81,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
 :-------------------------------------:|:-------------------------------------------:|:--:|
-![](paper/images/adv/original-92.png)  |  ![](paper/images/adv/perturbation-92.png)  |   ![](paper/images/adv/adversarial-sample-92.png)  |
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/original-92.png?raw=true)  |  ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/perturbation-92.png?raw=true)  |   ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/adversarial-sample-92.png?raw=true)  |
 
 </div>
 
@@ -91,7 +91,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
 :-------------------------------------:|:-------------------------------------------:|:--:|
-![](paper/images/adv/original-24-cnn.png)  |  ![](paper/images/adv/perturbation-24-cnn.png)  |   ![](paper/images/adv/adversarial-sample-24-cnn.png)  |
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/original-24-cnn.png?raw=true)  |  ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/perturbation-24-cnn.png?raw=true)  |   ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/adversarial-sample-24-cnn.png?raw=true)  |
 
 </div>
 
@@ -101,7 +101,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 Original Sample                        |  Perturbation by PGD                        |  Adversarial Sample  |
 :-------------------------------------:|:-------------------------------------------:|:--:|
-![](paper/images/adv/mtm_original_24.png)  |  ![](paper/images/adv/mtm_perturbation_24.png)  |   ![](paper/images/adv/mtm_adversarial_sample_24.png)  |
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/mtm_original_24.png?raw=true)  |  ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/mtm_perturbation_24.png?raw=true)  |   ![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/mtm_adversarial_sample_24.png?raw=true)  |
 
 </div>
 
@@ -111,7 +111,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 <div style="background-color:white; color:black; width:75%">
 
-![](paper/images/adv/fgsm-vs-pgd-24.png)
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/fgsm-vs-pgd-24.png?raw=true)
 
 </div>
 
@@ -119,7 +119,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 <div style="background-color:white; color:black; width:75%">
 
-![](paper/images/adv/fgsm-vs-pgd-92.png)
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/fgsm-vs-pgd-92.png?raw=true)
 
 </div>
 
@@ -127,7 +127,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 <div style="background-color:white; color:black; width:75%">
 
-![](paper/images/adv/fgsm-vs-pgd-92-cnn.png)
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/fgsm-vs-pgd-92-cnn.png?raw=true)
 
 </div>
 
@@ -135,7 +135,7 @@ Original Sample                        |  Perturbation by PGD                   
 
 <div style="background-color:white; color:black; width:75%">
 
-![](paper/images/adv/mtm_fgsm_vs_pgd_168.png)
+![](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/adv/mtm_fgsm_vs_pgd_168.png?raw=true)
 
 </div>
 
