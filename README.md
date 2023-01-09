@@ -54,10 +54,10 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 
 | Model Name           | Structure |
 |----------------------|-----------|
-| Single Layer LSTM    | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/single-layer-lstm.jpg))          |
-| Double Layer LSTM    | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/dounle-layer-lstm.jpg))          |
-| Bidirectional LSTM   | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/bdlstm.jpg))          |
-| CNN1D                | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/1dcnn.jpg))          |
+| Single Layer LSTM    | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/single-layer-lstm.jpg?raw=true))          |
+| Double Layer LSTM    | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/dounle-layer-lstm.jpg?raw=true))          |
+| Bidirectional LSTM   | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/bdlstm.jpg?raw=true))          |
+| CNN1D                | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/1dcnn.jpg?raw=true))          |
 
 # Some Experiment Results
 
