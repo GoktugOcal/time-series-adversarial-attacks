@@ -47,6 +47,18 @@ Trains the models after generating adversarial samples that is added to training
 $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, ...">] [--models <"model_name_1, model_name_2, ...">] [--attack <"FGSM, PGD">]
 ```
 
+# Definitions
+
+## Models
+
+
+| Model Name           | Structure |
+|----------------------|-----------|
+| Single Layer LSTM    | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/single-layer-lstm.jpg))          |
+| Double Layer LSTM    | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/dounle-layer-lstm.jpg))          |
+| Bidirectional LSTM   | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/bdlstm.jpg))          |
+| CNN1D                | ![]([paper/images/adv/perturbation-24.png](https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/1dcnn.jpg))          |
+
 # Some Experiment Results
 
 ## Adversarial Samples
