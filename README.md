@@ -51,8 +51,8 @@ $ python adversarial_training.py [--datasets <"dataset_name_1, dataset_name_2, .
 
 ## Models
 
-| Model Name           | Structure                                                                                                                                   |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Model Name           | Structure    |
+|----------------------|--------------|
 | Single Layer LSTM    | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/single-layer-lstm.jpg?raw=true" width=33%>   |
 | Double Layer LSTM    | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/double-layer-lstm.jpg?raw=true" width=33%>   |
 | Bidirectional LSTM   | <img src="https://github.com/GoktugOcal/time-series-adversarial-attacks/blob/main/paper/images/bdlstm.jpg?raw=true" width=33%>              |
